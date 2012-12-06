@@ -23,7 +23,7 @@ static function ActivateRecursively() {
 }
 
 @MenuItem ("FuguGames/DeactivateRecursively")
-static function DectivateRecursively() {
+static function DeactivateRecursively() {
 	if (Selection.activeGameObject !=null) {
 		SetActiveRecursively(Selection.activeGameObject,false);
 	}
