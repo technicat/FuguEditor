@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using UnityEditor;
 
+using UnityEditor.SceneManagement;
+
 namespace Fugu {
 
 public class SceneSelector : EditorWindow {
@@ -16,7 +18,7 @@ public class SceneSelector : EditorWindow {
 			EditorGUILayout.BeginHorizontal();
 	       	EditorGUILayout.LabelField(scene.path);  
 	      	 if (GUILayout.Button("Open")) {
-	       	 	 EditorApplication.OpenScene(scene.path);
+	       	 	 EditorSceneManager.OpenScene(scene.path);
 	       	}
 			EditorGUILayout.EndHorizontal();
 	}

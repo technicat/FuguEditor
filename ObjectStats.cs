@@ -29,7 +29,7 @@ public class ObjectStats : EditorWindow {
 			EditorGUILayout.LabelField("No mesh");
 		} else {
 			Mesh sm = mf.sharedMesh;
-			EditorGUILayout.LabelField("shader: "+go.renderer.sharedMaterial.shader.name);
+			EditorGUILayout.LabelField("shader: "+go.GetComponent<Renderer>().sharedMaterial.shader.name);
 			EditorGUILayout.LabelField("normals: "+sm.normals.Length);
 			EditorGUILayout.LabelField("tangents: "+sm.tangents.Length);
 			EditorGUILayout.LabelField("colors: "+sm.colors.Length);
