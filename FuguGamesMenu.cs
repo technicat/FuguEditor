@@ -23,6 +23,7 @@ public class FuguGamesMenu {
 		}
 
 		//  iOS
+		// move this to FuguGamesiOS?
 		static public void TargetiOS(string file) {
 			TargetiOS();
 			SetBuildPath(BuildTarget.iOS,file);
@@ -33,6 +34,26 @@ public class FuguGamesMenu {
 			PlayerSettings.use32BitDisplayBuffer = true;
 			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.iOS);
 		}
+
+		static public Texture2D[]iOSicons = new Texture2D[PlayerSettings.GetIconsForTargetGroup(BuildTargetGroup.iOS).Length];
+
+		static public void iOSIcon(string dir, string name) {
+			Texture2D icon = AssetDatabase.LoadMainAssetAtPath (dir+"/"+name) as Texture2D;
+			Debug.Log ("Setting "+iOSicons.Length+" icons");
+			for (int i=0; i<iOSicons.Length; ++i) {
+				iOSicons[i]=icon;
+			}
+			PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.iOS,iOSicons);
+		}
+
+		static public void iOSIcon(string dir, string[] names) {
+			for (int i=0; i<names.Length; ++i) {
+				Texture2D icon = AssetDatabase.LoadMainAssetAtPath (dir+"/"+names[i]) as Texture2D;
+				iOSicons[i]=icon;
+			}
+			PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.iOS,iOSicons);
+		}
+
 
 		// tvOS
 
@@ -59,6 +80,12 @@ public class FuguGamesMenu {
 			EditorUserBuildSettings.androidBuildSubtarget = MobileTextureSubtarget.Generic;
 			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.Android);
 		}
+
+		static public void TargetWebGL() {
+			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.WebGL);
+		}
+
+		// move to another file
 
 [MenuItem ("FuguGames/CreateChild")]
 static void CreateChild() {
