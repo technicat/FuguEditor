@@ -32,7 +32,7 @@ public class FuguGamesMenu {
 		
 		static public void TargetiOS() {
 			PlayerSettings.use32BitDisplayBuffer = true;
-			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.iOS);
+			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.iOS, BuildTarget.iOS);
 		}
 
 		static public Texture2D[]iOSicons = new Texture2D[PlayerSettings.GetIconsForTargetGroup(BuildTargetGroup.iOS).Length];
@@ -54,6 +54,11 @@ public class FuguGamesMenu {
 			PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.iOS,iOSicons);
 		}
 
+		// OSX
+
+		static public void TargetOSX() {
+			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneOSXUniversal);
+		}
 
 		// tvOS
 
@@ -65,7 +70,7 @@ public class FuguGamesMenu {
 
 		static public void TargetTV() {
 			PlayerSettings.use32BitDisplayBuffer = true;
-			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.tvOS);
+			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.tvOS, BuildTarget.tvOS);
 		}
 
 		// android
@@ -78,11 +83,25 @@ public class FuguGamesMenu {
 		static public void TargetAndroidGeneric() {
 			PlayerSettings.use32BitDisplayBuffer = true; // false;
 			EditorUserBuildSettings.androidBuildSubtarget = MobileTextureSubtarget.Generic;
-			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.Android);
+			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android,BuildTarget.Android);
 		}
 
 		static public void TargetWebGL() {
-			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.WebGL);
+			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.WebGL, BuildTarget.WebGL);
+		}
+
+		// windows
+
+		static public void TargetWSA() {
+			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.WSA, BuildTarget.WSAPlayer);
+		}
+
+		static public void TargetWindows() {
+			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
+		}
+
+		static public void TargetLinux() {
+			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneLinuxUniversal);
 		}
 
 		// move to another file
