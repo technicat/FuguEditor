@@ -9,7 +9,6 @@ namespace Fugu.Editor {
 
 public class FuguGamesMenu {
 
-		// make PlayerSettings extension?
 		static public void AddScriptingDefineSymbolsForGroup(BuildTargetGroup targetGroup, string defines) {
 			string defs = PlayerSettings.GetScriptingDefineSymbolsForGroup(targetGroup);
 			defines += ";"+defs;
@@ -37,21 +36,22 @@ public class FuguGamesMenu {
 
 		static public Texture2D[]iOSicons = new Texture2D[PlayerSettings.GetIconsForTargetGroup(BuildTargetGroup.iOS).Length];
 
-		static public void iOSIcon(string dir, string name) {
+		static public void iOSIcon(string dir, string name, IconKind kind = IconKind.Any) {
 			Texture2D icon = AssetDatabase.LoadMainAssetAtPath (dir+"/"+name) as Texture2D;
-			Debug.Log ("Setting "+iOSicons.Length+" icons");
+			int[] sizes = PlayerSettings.GetIconSizesForTargetGroup(BuildTargetGroup.iOS, kind);
+			Texture2D[] iOSicons = new Texture2D[sizes.Length];
 			for (int i=0; i<iOSicons.Length; ++i) {
 				iOSicons[i]=icon;
 			}
-			PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.iOS,iOSicons);
+			PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.iOS,iOSicons, kind);
 		}
 
-		static public void iOSIcon(string dir, string[] names) {
+		static public void iOSIcon(string dir, string[] names, IconKind kind = IconKind.Any) {
 			for (int i=0; i<names.Length; ++i) {
 				Texture2D icon = AssetDatabase.LoadMainAssetAtPath (dir+"/"+names[i]) as Texture2D;
 				iOSicons[i]=icon;
 			}
-			PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.iOS,iOSicons);
+			PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.iOS,iOSicons, kind);
 		}
 
 		// OSX
