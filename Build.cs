@@ -14,12 +14,9 @@ public class Build : EditorWindow {
 		public void OnGUI() {
 		 LayoutTarget(BuildTarget.iOS);
 			 LayoutTarget(BuildTarget.Android);
-//			 LayoutTarget(BuildTarget.WebPlayer);
-//			 LayoutTarget(BuildTarget.WebPlayerStreamed);
 			LayoutTarget(BuildTarget.StandaloneWindows);
 			LayoutTarget(BuildTarget.StandaloneWindows64);
-			LayoutTarget(BuildTarget.StandaloneOSXUniversal);
-			LayoutTarget(BuildTarget.StandaloneOSXIntel);
+			LayoutTarget(BuildTarget.StandaloneOSX);
 			LayoutTarget(BuildTarget.StandaloneLinux);
 			LayoutTarget(BuildTarget.StandaloneLinux64);
 			LayoutTarget(BuildTarget.StandaloneLinuxUniversal);
