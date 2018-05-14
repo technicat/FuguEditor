@@ -21,7 +21,6 @@ public class Build : EditorWindow {
 			LayoutTarget(BuildTarget.StandaloneLinux64);
 			LayoutTarget(BuildTarget.StandaloneLinuxUniversal);
 			LayoutTarget(BuildTarget.tvOS);
-			LayoutTarget(BuildTarget.WiiU);
 		}
 		
 		private void LayoutTarget(BuildTarget target) {
