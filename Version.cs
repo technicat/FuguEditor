@@ -10,16 +10,7 @@ public class Version {
 
 [MenuItem ("FuguGames/Version/IncVersion")]
 static void IncVersion() {
-	try
-       {
-           int result = Int32.Parse(PlayerSettings.bundleVersion);
-		   result = result + 1;
-		   PlayerSettings.bundleVersion = result.ToString();
-       }
-	   catch (FormatException)
-       {
-           Debug.Log("Unable to parse iOS build number");
-       }
+	// todo - increment PlayerSettings.bundleVersion
 	ClearBuildIOS();
 	IncBuildAndroid();
 }
