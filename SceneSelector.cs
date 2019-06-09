@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using UnityEditor;
-
 using UnityEditor.SceneManagement;
 
 namespace Fugu {

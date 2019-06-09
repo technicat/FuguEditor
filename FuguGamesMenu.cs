@@ -57,7 +57,7 @@ public class FuguGamesMenu {
 		// OSX
 
 		static public void TargetOSX() {
-			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneOSXUniversal);
+			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneOSX);
 		}
 
 		// tvOS
@@ -103,23 +103,6 @@ public class FuguGamesMenu {
 		static public void TargetLinux() {
 			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneLinuxUniversal);
 		}
-
-		// move to another file
-
-[MenuItem ("FuguGames/CreateChild")]
-static void CreateChild() {
-	if (Selection.activeGameObject !=null) {
-		GameObject go = new GameObject("GameObject");
-		go.transform.parent = Selection.activeGameObject.transform;
-		go.transform.localPosition = Vector3.zero;
-	}
-}
-
-[MenuItem ("FuguGames/CreateChild",true)]
-static bool ValidateGameObject() {
-	return (Selection.activeGameObject !=null);
-}
-
 
 }
 }
