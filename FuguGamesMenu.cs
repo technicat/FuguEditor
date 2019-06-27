@@ -9,10 +9,23 @@ namespace Fugu.Editor {
 
 public class FuguGamesMenu {
 
-		static public void AddScriptingDefineSymbolsForGroup(BuildTargetGroup targetGroup, string defines) {
+		static public void AddScriptingDefines(BuildTargetGroup targetGroup, string defines) {
 			string defs = PlayerSettings.GetScriptingDefineSymbolsForGroup(targetGroup);
 			defines += ";"+defs;
 			PlayerSettings.SetScriptingDefineSymbolsForGroup(targetGroup,defines);
+		}
+
+		static public void ClearScriptingDefines(BuildTargetGroup targetGroup) {
+			PlayerSettings.SetScriptingDefineSymbolsForGroup(targetGroup,"");
+		}
+
+		static public void ClearAllScriptingDefines() {
+			ClearScriptingDefines(BuildTargetGroup.Standalone);
+			ClearScriptingDefines(BuildTargetGroup.WebGL);
+			ClearScriptingDefines(BuildTargetGroup.Android);
+			ClearScriptingDefines(BuildTargetGroup.iOS);
+			ClearScriptingDefines(BuildTargetGroup.tvOS);
+			ClearScriptingDefines(BuildTargetGroup.WSA);
 		}
 
 		static public void SetBuildPath(BuildTarget target, string name) {

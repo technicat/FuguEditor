@@ -5,17 +5,23 @@ using UnityEditor;
 
 namespace Fugu.Editor {
 
-
+// should rename this
+// 
 public class Version {
 
-[MenuItem ("FuguGames/Version/IncVersion")]
+	[MenuItem ("FuguGames/Version/Clear Defines")]
+static void ClearDefines() {
+	FuguGamesMenu.ClearAllScriptingDefines();
+}
+
+[MenuItem ("FuguGames/Version/Inc Mobile Versions")]
 static void IncVersion() {
 	// todo - increment PlayerSettings.bundleVersion
 	ClearBuildIOS();
 	IncBuildAndroid();
 }
 
-[MenuItem ("FuguGames/Version/IncIOSBuild")]
+[MenuItem ("FuguGames/Version/Inc IOSBuild")]
 static void IncBuildIOS() {
 	try
        {
@@ -29,7 +35,7 @@ static void IncBuildIOS() {
        }
 }
 
-[MenuItem ("FuguGames/Version/ClearIOSBuild")]
+[MenuItem ("FuguGames/Version/Clear IOS Build")]
 static void ClearBuildIOS() {
 	PlayerSettings.iOS.buildNumber = "0";
 }
