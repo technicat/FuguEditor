@@ -10,7 +10,7 @@ namespace Fugu.Editor {
 
 	public class Preferences {
 
-		[MenuItem ("FuguGames/Preferences/Clear")]
+		[MenuItem (FuguGamesMenu.Menu+"Preferences/Clear")]
 		static void Clear() {
 			PlayerPrefs.DeleteAll();
 		}

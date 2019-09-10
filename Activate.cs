@@ -7,14 +7,14 @@ namespace Fugu.Editor {
 
 public class Activate {
 
-[MenuItem ("FuguGames/Active/ActivateRecursively")]
+[MenuItem (FuguGamesMenu.Menu+"Active/ActivateRecursively")]
 static void ActivateRecursively() {
 	if (Selection.activeGameObject !=null) {
 		SetActiveRecursively(Selection.activeGameObject,true);
 	}
 }
 
-[MenuItem ("FuguGames/Active/DeactivateRecursively")]
+[MenuItem (FuguGamesMenu.Menu+"Active/DeactivateRecursively")]
 static void DectivateRecursively() {
 	if (Selection.activeGameObject !=null) {
 		SetActiveRecursively(Selection.activeGameObject,false);
@@ -29,8 +29,8 @@ static void SetActiveRecursively(GameObject obj,bool val) {
 			
 }
 
-[MenuItem ("FuguGames/ActivateRecursively", true)]
-[MenuItem ("FuguGames/DeactivateRecursively", true)]
+[MenuItem (FuguGamesMenu.Menu+"ActivateRecursively", true)]
+[MenuItem (FuguGamesMenu.Menu+"DeactivateRecursively", true)]
 static bool ValidateGameObject() {
 	return (Selection.activeGameObject !=null);
 }

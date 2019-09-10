@@ -9,7 +9,7 @@ namespace Fugu.Editor {
 
 public class CreatChild {
 
-[MenuItem ("FuguGames/CreateChild")]
+[MenuItem (FuguGamesMenu.Menu+"CreateChild")]
 static void CreateChild() {
 	if (Selection.activeGameObject !=null) {
 		GameObject go = new GameObject("GameObject");
@@ -18,7 +18,7 @@ static void CreateChild() {
 	}
 }
 
-[MenuItem ("FuguGames/CreateChild",true)]
+[MenuItem (FuguGamesMenu.Menu+"CreateChild",true)]
 static bool ValidateGameObject() {
 	return (Selection.activeGameObject !=null);
 }

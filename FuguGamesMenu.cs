@@ -9,6 +9,8 @@ namespace Fugu.Editor {
 
 public class FuguGamesMenu {
 
+		public const string Menu = "Tools/FuguGames/";
+
 		static public void AddScriptingDefines(BuildTargetGroup targetGroup, string defines) {
 			string defs = PlayerSettings.GetScriptingDefineSymbolsForGroup(targetGroup);
 			defines += ";"+defs;

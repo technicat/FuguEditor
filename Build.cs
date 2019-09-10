@@ -6,7 +6,7 @@ namespace Fugu.Editor {
 
 public class Build : EditorWindow {
 
-       [MenuItem ("FuguGames/Builds")]
+       [MenuItem (FuguGamesMenu.Menu+"Builds")]
        static void Init() {
        	EditorWindow.GetWindow(typeof(Build));
 	}

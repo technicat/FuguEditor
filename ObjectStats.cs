@@ -6,11 +6,11 @@ namespace Fugu.Editor {
 
 public class ObjectStats : EditorWindow {
 
-       [MenuItem ("FuguGames/Stats/Object")]
+       [MenuItem (FuguGamesMenu.Menu+"Stats/Object")]
        static void MeshInfo() {
       	 EditorWindow.GetWindow(typeof(ObjectStats));
 	}
-		[MenuItem ("FuguGames/Stats/Object",true)]
+		[MenuItem (FuguGamesMenu.Menu+"Stats/Object",true)]
 		static bool ValidateGameObject() {
 			return Selection.activeGameObject != null;
 		}

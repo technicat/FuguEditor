@@ -9,7 +9,7 @@ namespace Fugu.Editor {
 
 public class Screenshot {
 
-	[MenuItem ("FuguGames/Screenshot/Take")]
+	[MenuItem (FuguGamesMenu.Menu+"/Screenshot/Take")]
 	static void Take() {
 		ScreenCapture.CaptureScreenshot("unityscreenshot.png");
 	}

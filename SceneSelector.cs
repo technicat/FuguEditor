@@ -3,11 +3,11 @@ using System.Collections;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-namespace Fugu {
+namespace Fugu.Editor {
 
 public class SceneSelector : EditorWindow {
 
-       [MenuItem ("FuguGames/Scene")]
+       [MenuItem (FuguGamesMenu.Menu+"Scene")]
        static void Init() {
        	EditorWindow.GetWindow(typeof(SceneSelector));
 	}

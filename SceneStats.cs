@@ -10,7 +10,7 @@ public class SceneStats : EditorWindow {
 	public int verts = 0;
 	public int gos = 0;
 
-    [MenuItem ("FuguGames/Stats/Scene")]
+    [MenuItem (FuguGamesMenu.Menu+"Stats/Scene")]
        static void Stats() {
       	 EditorWindow.GetWindow(typeof(SceneStats));
 	}

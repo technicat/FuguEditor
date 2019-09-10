@@ -8,7 +8,7 @@ namespace Fugu.Editor {
 
 public class Say : EditorWindow {
 
-       [MenuItem ("FuguGames/Say")]
+       [MenuItem (FuguGamesMenu.Menu+"Say")]
        static void Init() {
        	EditorWindow.GetWindow(typeof(Say));
 	}
